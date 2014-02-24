@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="200dp" >
+
+    <!-- head image swiper -->
+    <!-- 注意这里高度是在代码中根据屏幕长度，返回的图片宽高比调整 -->
+    <!-- 高度不固定 -->
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/image_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- 切换小点(动态) -->
+
+    <LinearLayout
+        android:id="@+id/image_vp_indicator_box"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:layout_alignParentBottom="true"
+        android:background="@color/dim_gray"
+        android:gravity="center_vertical|right"
+        android:orientation="horizontal"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp" >
+
+        <TextView
+            android:id="@+id/image_title_text"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="1"
+            android:ellipsize="end"
+            android:singleLine="true"
+            android:textColor="#dddddd"
+            android:textSize="14sp" />
+    </LinearLayout>
+
+</RelativeLayout>

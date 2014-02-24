@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/app_bg"
+    android:orientation="vertical" >
+
+    <!-- title -->
+	<include android:id="@+id/title_bar"
+	    android:layout_width="match_parent"
+	    android:layout_height="wrap_content"
+	    layout="@layout/title_bar"/>
+  
+    <!-- head image swiper -->
+    <!-- 注意这里高度是在代码中根据屏幕长度，返回的图片宽高比调整 -->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="200dp" >
+
+        <!-- 高度不固定 -->
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/image_view_pager"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+        <!-- 切换小点(动态) -->
+
+        <LinearLayout
+            android:id="@+id/image_vp_indicator_box"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_alignParentBottom="true"
+            android:background="@color/dim_gray"
+            android:gravity="center_vertical|right"
+            android:paddingRight="10dp"
+            android:paddingLeft="10dp"
+            android:orientation="horizontal" >
+             
+            <TextView android:id="@+id/image_title_text"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="14sp"
+                android:textColor="#dddddd"
+                android:singleLine="true"
+                android:ellipsize="end"
+                android:layout_marginRight="10dp"/>
+                
+        </LinearLayout>
+    </RelativeLayout>
+
+    <!-- 中间图标区域(单独滚动) -->
+    <!-- 九宫格 -->
+    <RelativeLayout
+        android:id="@+id/center_menu_box"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" >
+        <GridView
+            android:id="@+id/menu_grid"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:horizontalSpacing="10dp"
+            android:numColumns="4"
+            android:scrollbarStyle="outsideOverlay"
+            android:scrollbars="vertical"
+            android:verticalScrollbarPosition="right"
+            android:verticalSpacing="4dp" 
+            android:stretchMode="columnWidth" />
+    </RelativeLayout>
+
+</LinearLayout>

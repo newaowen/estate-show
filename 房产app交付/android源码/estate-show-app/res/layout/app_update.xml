@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/setting_bg"
+    android:orientation="vertical" >
+
+    <!-- title -->
+
+    <include
+        android:id="@+id/title_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        layout="@layout/title_bar" />
+
+    <TextView 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/app_version_label"/>
+    
+    <!-- table views -->
+    <!-- 注意这里高度是在代码中根据屏幕长度，返回的图片宽高比调整 -->
+	
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:orientation="vertical" >
+
+        <!-- 最新版本 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_top_selector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="10dp" >
+
+            <TextView
+                android:id="@+id/latest_version_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/latest_version_label"
+                android:textColor="@color/table_cell_text"
+                android:textSize="16sp" />
+           
+        </LinearLayout>
+
+        <!-- 当前版本 -->
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/table_bottom_selector"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingBottom="10dp"
+            android:paddingLeft="14dp"
+            android:paddingRight="14dp"
+            android:paddingTop="10dp" >
+
+            <TextView
+                android:id="@+id/current_version_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/current_version_label"
+                android:textColor="@color/table_cell_text"
+                android:textSize="16sp" />
+
+        </LinearLayout>
+	</LinearLayout> 
+	
+        <!--升级button -->
+     <Button android:id="@+id/update_btn"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:text="@string/update"
+         android:layout_marginLeft="20dp"
+         android:layout_marginRight="20dp"
+         android:paddingTop="5dp"
+         android:paddingBottom="5dp" />
+
+</LinearLayout>
